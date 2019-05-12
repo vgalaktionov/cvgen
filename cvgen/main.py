@@ -11,8 +11,10 @@ from pydantic import ValidationError
 from weasyprint import CSS, HTML
 
 
+CURRENT_DIR = Path(__file__).parent
 jinja2_env = Environment(
-    loader=FileSystemLoader("./templates"), autoescape=select_autoescape(["html"])
+    loader=FileSystemLoader(str(CURRENT_DIR / "templates")),
+    autoescape=select_autoescape(["html"]),
 )
 
 
@@ -33,7 +35,9 @@ def render(data: CV, to: PathLike):
     rendered = template.render(
         cv=data, timestamp=datetime.datetime.now().strftime("%d-%m-%Y")
     )
-    HTML(string=rendered).write_pdf(to, stylesheets=[CSS("./templates/style.css")])
+    HTML(string=rendered).write_pdf(
+        to, stylesheets=[CSS(CURRENT_DIR / "templates" / "style.css")]
+    )
 
 
 @click.command()
