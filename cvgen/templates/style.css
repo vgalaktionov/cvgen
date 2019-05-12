@@ -55,6 +55,12 @@ h3 {
     padding-bottom: 0;
 }
 
+h4 {
+    font-size: 10pt;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
 dt {
     display: block;
     float: left;
@@ -76,6 +82,7 @@ dt {
     border-left: 3px solid #4281A4;
     margin-right: 2.5cm;
     border-collapse: collapse;
+    text-align: justify;
 }
 
 td {
@@ -83,5 +90,13 @@ td {
 }
 
 td.description {
-    line-height: 0rem;
+    line-height: 0.08rem;
+}
+
+.dates {
+    text-align: right;
+}
+
+.subtitle {
+    margin-top: -1rem;
 }

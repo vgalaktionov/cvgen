@@ -10,6 +10,7 @@
 <body>
     <div class="name">
         <h1>{{ cv.name }}</h1>
+        <h2 class="subtitle">Curriculum Vitae</h2>
     </div>
     <dl class="personalia">
         <dt><strong>Phone:</strong></dt>
@@ -31,17 +32,17 @@
         <table class="cvtable">
             {% for job in cv.experience %}
             <tr>
-                <td colspan="5">
+                <td colspan="3">
                     <h3>{{ job.title }}</h3><br>
                     {% if job.industry %}
                     <em>{{ job.industry }}</em>
                     {% endif %}
                 </td>
-                <td>{{ job.dates }}</td>
+                <td class="dates">{{ job.dates }}</td>
             </tr>
             {% if job.description %}
             <tr>
-                <td colspan="6">
+                <td colspan="4">
                     <p>{{ job.description }}</p>
                 </td>
             </tr>
@@ -52,14 +53,14 @@
         <table class="cvtable">
             {% for ed in cv.education %}
             <tr>
-                <td colspan="5">
+                <td colspan="3">
                     <h3>{{ ed.diploma }}</h3><br>
                     <em>{{ ed.institution }}</em>
                 </td>
-                <td>{{ ed.dates }}</td>
+                <td class="dates">{{ ed.dates }}</td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="4">
                     <p>{{ ed.description }}</p>
                 </td>
             </tr>
@@ -67,15 +68,14 @@
         </table>
         <h2>Skills</h2>
         <table class="cvtable">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
             {% for skill in cv.skills %}
             <tr>
-                <td>
-                    <h3>{{ skill.category }}</h3><br><br>
-                </td>
-            </tr>
-            <tr>
                 <td class="description">
-                    <p>{{ skill.keywords | join(', ') }}.</p>
+                    <strong>{{ skill.category }}</strong>
+                    <p>{{ skill.keywords | join(', ') }}. <br><br><br></p>
                 </td>
             </tr>
             {% endfor %}
@@ -90,7 +90,11 @@
             </tr>
             <tr>
                 <td>
-                    <p>{{ project.description }}</p>
+                    <p>{{ project.description }}
+                        {% if project.link %}
+                        <br><a href="{{ project.link }}">{{ project.link }}</a>
+                        {% endif %}
+                    </p>
                 </td>
             </tr>
             {% endfor %}
@@ -99,14 +103,14 @@
         <table class="cvtable">
             {% for activity in cv.activities %}
             <tr>
-                <td colspan="5">
+                <td colspan="3">
                     <h3>{{ activity.title }}</h3><br>
                     <em>{{ activity.organization }}</em>
                 </td>
-                <td>{{ activity.dates }}</td>
+                <td class="dates">{{ activity.dates }}</td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="4">
                     <p>{{ activity.description }}</p>
                 </td>
             </tr>
