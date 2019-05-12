@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cv.name }} CV {{ timestamp }}</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="name">
+        <h1>{{ cv.name }}</h1>
+    </div>
+    <dl class="personalia">
+        <dt><strong>Phone:</strong></dt>
+        <dd>{{ cv.personalia.phone }}</dd>
+        <dt><strong>Email:</strong></dt>
+        <dd>{{ cv.personalia.email }}</dd>
+        <dt><strong>Address:</strong></dt>
+        <dd>{{ cv.personalia.address }}</dd>
+        <dt><strong>Nationality:</strong></dt>
+        <dd>{{ cv.personalia.nationality }}</dd>
+    </dl>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <main>
+        <h2>Work Experience</h2>
+        <table class="cvtable">
+            {% for job in cv.experience %}
+            <tr>
+                <td colspan="5">
+                    <h3>{{ job.title }}</h3><br>
+                    {% if job.industry %}
+                    <em>{{ job.industry }}</em>
+                    {% endif %}
+                </td>
+                <td>{{ job.dates }}</td>
+            </tr>
+            {% if job.description %}
+            <tr>
+                <td colspan="6">
+                    <p>{{ job.description }}</p>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+        <h2>Education</h2>
+        <table class="cvtable">
+            {% for ed in cv.education %}
+            <tr>
+                <td colspan="5">
+                    <h3>{{ ed.diploma }}</h3><br>
+                    <em>{{ ed.institution }}</em>
+                </td>
+                <td>{{ ed.dates }}</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <p>{{ ed.description }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Skills</h2>
+        <table class="cvtable">
+            {% for skill in cv.skills %}
+            <tr>
+                <td>
+                    <h3>{{ skill.category }}</h3><br>
+                </td>
+            </tr>
+            <tr>
+                <td class="description">
+                    <p>{{ skill.keywords | join(', ') }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Projects</h2>
+        <table class="cvtable">
+            {% for project in cv.projects %}
+            <tr>
+                <td>
+                    <h3>{{ project.title }}</h3><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{{ project.description }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Other Activities</h2>
+        <table class="cvtable">
+            {% for activity in cv.activities %}
+            <tr>
+                <td colspan="5">
+                    <h3>{{ activity.title }}</h3><br>
+                    <em>{{ activity.organization }}</em>
+                </td>
+                <td>{{ activity.dates }}</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <p>{{ activity.description }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+
+</html>

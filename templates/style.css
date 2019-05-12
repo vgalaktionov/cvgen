@@ -1,0 +1,72 @@
+@page {
+    size: A4;
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+}
+
+body {
+    font-family: "Open Sans";
+    font-size: 8pt;
+}
+
+h1,
+h2 {
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 24pt;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 14pt;
+}
+
+h3 {
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+dt {
+    display: block;
+    float: left;
+    min-width: 5rem;
+}
+
+.name {
+    display: inline-block;
+}
+
+.personalia {
+    float: right;
+    margin-right: 2cm;
+    min-width: 17rem;
+}
+
+.cvtable {
+    min-width: 190mm;
+    border-left: 3px solid #4281A4;
+}
+
+td {
+    padding-left: 0.5rem;
+    line-height: 0.5rem;
+}
+
+td.description {
+    line-height: 0rem;
+}

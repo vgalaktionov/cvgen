@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/Users/Vadim/Library/Caches/pypoetry/virtualenvs/cvgen-py3.6/bin/python",
+    "python.linting.mypyEnabled": true,
+    "licenser.license": "MIT"
+}
