@@ -1,4 +1,4 @@
-from pydantic import EmailStr
+from pydantic import EmailStr, UrlStr
 from pydantic.dataclasses import dataclass
 
 from typing import Optional, List
@@ -40,6 +40,7 @@ class Activity:
 class Project:
     title: str
     description: str
+    link: Optional[UrlStr]
 
 
 @dataclass
