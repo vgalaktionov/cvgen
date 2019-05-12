@@ -6,6 +6,9 @@ authors = ["Vadim <vadim.galaktionov@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
+weasyprint = "^47.0"
+pyyaml = "^5.1"
+attrs = "^19.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
