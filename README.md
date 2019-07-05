@@ -69,12 +69,18 @@ activities:
 Run it like:
 
 ```bash
-cvgen [input_file]
+$ cvgen [input_file]
 ```
 
 ## Contributing
 
 PRs accepted for additional templates/styles/features.
+
+To build & publish to PyPI:
+
+```bash
+$ poetry build && poetry publish
+```
 
 ## License
 
