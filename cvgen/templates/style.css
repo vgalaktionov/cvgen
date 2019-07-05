@@ -67,6 +67,11 @@ dt {
     min-width: 5rem;
 }
 
+.blurb,
+.cvtable {
+    margin-right: 2.5cm;
+}
+
 .name {
     display: inline-block;
 }
@@ -80,7 +85,6 @@ dt {
 .cvtable {
     min-width: 180mm;
     border-left: 3px solid #4281A4;
-    margin-right: 2.5cm;
     border-collapse: collapse;
     text-align: justify;
 }

@@ -2,6 +2,7 @@ import datetime
 import subprocess
 from os import PathLike
 from pathlib import Path
+from pprint import pprint
 
 import click
 import yaml
@@ -18,11 +19,13 @@ jinja2_env = Environment(
 )
 
 
-def load_data(path: PathLike) -> CV:
+def load_data(path: PathLike, debug: bool) -> CV:
     with open(path) as f:
         data = yaml.safe_load(f)
     try:
         data = CV(**data)
+        if debug:
+            pprint(data)
         return data
     except ValidationError as e:
         click.echo("Input data file invalid", err=True)
@@ -52,7 +55,7 @@ def render(data: CV, to: PathLike, debug: bool = False):
 def main(input_data: PathLike, debug: bool):
     click.echo("CVGen started!")
 
-    cv = load_data(input_data)
+    cv = load_data(input_data, debug)
     click.echo("Data has been loaded successfully.")
     output_file = Path(f"{cv.name} CV @ {datetime.datetime.now():%d-%m-%Y}.pdf")
 

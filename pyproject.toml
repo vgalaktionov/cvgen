@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "cvgen"
-version = "0.3.0"
+version = "0.4.0"
 description = "A tool for easily creating a good-looking CV in PDF format from .yaml data, HTML & CSS."
 authors = ["Vadim Galaktionov <vadim@galaktionov.nl>"]
 include = ["cvgen/templates/*"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6"

@@ -28,6 +28,7 @@
     <br>
     <br>
     <main>
+        <div class="blurb">{{ cv.blurb | safe }}</div>
         <h2>Work Experience</h2>
         <table class="cvtable">
             {% for job in cv.experience %}

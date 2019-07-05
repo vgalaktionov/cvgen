@@ -52,6 +52,7 @@ class Skill:
 @dataclass
 class CV:
     name: str
+    blurb: str
     personalia: Personalia
     experience: List[Job]
     education: List[Education]
