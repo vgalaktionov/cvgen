@@ -1,25 +1,25 @@
 [tool.poetry]
 name = "cvgen"
-version = "0.4.0"
+version = "0.5.0"
 description = "A tool for easily creating a good-looking CV in PDF format from .yaml data, HTML & CSS."
 authors = ["Vadim Galaktionov <vadim@galaktionov.nl>"]
 include = ["cvgen/templates/*"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.6"
-weasyprint = "^47.0"
-pyyaml = "^5.1"
-click = "^7.0"
-pydantic = "^0.25.0"
-jinja2 = "^2.10"
-email-validator = "^1.0"
+python = ">=3.11,<4.0"
+weasyprint = "^62.3"
+pyyaml = ">=5.1,<5.4"
+click = "^8.1.7"
+pydantic = "^2.9.2"
+jinja2 = "^3.1.4"
+email-validator = "^2.0"
 
 [tool.poetry.dev-dependencies]
-flake8 = "^3.7"
-pytest = "^3.0"
-black = {version = "^18.3-alpha.0",allows-prereleases = true}
-mypy = "^0.701.0"
+flake8 = "^7.1.0"
+pytest = "^8.3.3"
+black = { version = "^24.8.0", allow-prereleases = true }
+mypy = "^1.11.2"
 
 [tool.poetry.scripts]
 cvgen = "cvgen.main:main"

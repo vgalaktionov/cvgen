@@ -1,7 +1,7 @@
-from pydantic import EmailStr, UrlStr
-from pydantic.dataclasses import dataclass
+from typing import List, Optional
 
-from typing import Optional, List
+from pydantic import AnyHttpUrl, EmailStr
+from pydantic.dataclasses import dataclass
 
 
 @dataclass(unsafe_hash=True)
@@ -40,7 +40,7 @@ class Activity:
 class Project:
     title: str
     description: str
-    link: Optional[UrlStr]
+    link: Optional[AnyHttpUrl]
 
 
 @dataclass

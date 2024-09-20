@@ -125,3 +125,4 @@ dmypy.json
 cv.yaml
 *.pdf
 rendered.html
+.DS_Store

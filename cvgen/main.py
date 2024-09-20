@@ -1,16 +1,17 @@
 import datetime
 import subprocess
+import sys
 from os import PathLike
 from pathlib import Path
 from pprint import pprint
 
 import click
 import yaml
-from cvgen.models import CV
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pydantic import ValidationError
 from weasyprint import CSS, HTML
 
+from cvgen.models import CV
 
 CURRENT_DIR = Path(__file__).parent
 jinja2_env = Environment(
@@ -65,3 +66,7 @@ def main(input_data: PathLike, debug: bool):
 
     click.echo("Opening rendered pdf...")
     subprocess.Popen(["open", output_file])
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
